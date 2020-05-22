@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8"/>
+<canvas id='chessboard'>Шахматная доска</canvas>
+
+<script>
+    var canvas = document.getElementById("chessboard");
+    var context = canvas.getContext('2d');
+    canvas.width  = 300;
+    canvas.height = 300;
+ 
+    context.strokeRect(15, 15, 266, 266);
+    context.strokeRect(18, 18, 260, 260);
+
+    context.fillStyle = '#B92626';
+    context.fillRect(20, 20, 256, 256);
+    for (i = 0; i < 8; i += 2)
+      for (j = 0; j < 8; j += 2) {
+        context.clearRect(20 + i * 32, 20 + j * 32, 32, 32);
+        context.clearRect(20 + (i + 1) * 32, 20 + (j + 1) * 32, 32, 32);
+      }
+</script>
+
+    <canvas id='rects'> прямоугольники</canvas>
+
+<script>
+    var canvas = document.getElementById("rects");
+    var context = canvas.getContext('2d');
+    canvas.height = 200;
+    canvas.width = 300;
+    
+    context.fillStyle = "#378CAE";
+    context.fillRect(15, 15, 100, 100); 
+    context.fillStyle = "#D214C2";
+    context.fillRect(85, -30, 100, 100);
+    context.fillStyle = "#D3821F";
+    context.fillRect(115, 115, 100, 100);
+</script>
+<canvas id='part_circle'>частичная окружность</canvas>
+
+<script>
+  var canvas = document.getElementById("part_circle");
+  var context = canvas.getContext('2d');
+  canvas.height = 400;
+  canvas.width = 400;
+  context.beginPath();
+  context.fillStyle = "#F7BF04";
+  context.beginPath();
+  context.arc(100, 50, 100, 0, Math.PI * 1);
+  context.fill();
+</script>
+ </head>
+ <body>
+ </body>
+</html>
